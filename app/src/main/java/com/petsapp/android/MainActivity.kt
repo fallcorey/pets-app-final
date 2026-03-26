@@ -1,20 +1,19 @@
 package com.petsapp.android
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.petsapp.android.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
         
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val textTitle = findViewById<TextView>(R.id.text_title)
+        val textSubtitle = findViewById<TextView>(R.id.text_subtitle)
         
-        binding.textTitle.text = "🐾 Pets App"
-        binding.textSubtitle.text = "Добро пожаловать!\nВаши питомцы под присмотром"
+        textTitle.text = "🐾 Pets App"
+        textSubtitle.text = "Добро пожаловать!\nВаши питомцы под присмотром"
     }
 }
